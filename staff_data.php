@@ -96,16 +96,16 @@ try {
 
 <div class="container">
     <div class="dashboard-container">
-        <h2 class="dashboard-title" style="margin-bottom: 18px;">จัดการข้อมูลพนักงาน</h2>
+        <h2 class="dashboard-title" style="margin-bottom: 18px;">ຈັດການຂໍ້ມູນພະນັກງານ</h2>
         <?php if ($message): ?>
             <p class="status-message" style="color: green; font-weight: bold;"><?= htmlspecialchars($message) ?></p>
         <?php endif; ?>
 
         <form method="get" style="display:flex;gap:12px;margin-bottom:18px;">
-            <input type="text" name="search" placeholder="ค้นหา (ชื่อ, เบอร์โทร, อีเมล)" value="<?= htmlspecialchars($search) ?>" style="flex:1;padding:10px;border-radius:6px;border:1px solid #ccc;">
-            <button type="submit" class="dashboard-add-btn" style="width:180px;">ค้นหา</button>
+            <input type="text" name="search" placeholder="ຄົ້ນຫາ (ຊື່, ເບີໂທ, ອີເມລ)" value="<?= htmlspecialchars($search) ?>" style="flex:1;padding:10px;border-radius:6px;border:1px solid #ccc;">
+            <button type="submit" class="dashboard-add-btn" style="width:180px;">ຄົ້ນຫາ</button>
         </form>
-        <button type="button" class="dashboard-add-btn" onclick="openAddModal()" style="margin-bottom:18px;width:200px;">เพิ่มข้อมูลพนักงาน</button>
+        <button type="button" class="dashboard-add-btn" onclick="openAddModal()" style="margin-bottom:18px;width:200px;">ເພີ່ມຂໍ້ມູນພະນັກງານ</button>
 
         <!-- Employee Data Table -->
         <table class="dashboard-table">
@@ -122,7 +122,7 @@ try {
             </thead>
             <tbody>
                 <?php if (empty($employees)): ?>
-                    <tr><td colspan="7" style="text-align:center;">ไม่พบข้อมูลพนักงาน</td></tr>
+                    <tr><td colspan="7" style="text-align:center;">ບໍ່ພົບຂໍ້ມູນພະນັກງານ</td></tr>
                 <?php else: ?>
                     <?php foreach ($employees as $index => $emp): ?>
                         <tr>
@@ -153,29 +153,29 @@ try {
             <input type="hidden" id="action" name="action">
             <input type="hidden" id="empId" name="empId">
             
-            <label for="employeeName">ชื่อ และ นามสกุล:</label>
+            <label for="employeeName">ຊື່ ແລະ ນາມສະກຸນ:</label>
             <input type="text" id="employeeName" name="employeeName" class="gpg-input" required>
             
-            <label for="employeePhone">เบอร์โทร:</label>
+            <label for="employeePhone">ເບີໂທ:</label>
             <input type="text" id="employeePhone" name="employeePhone" class="gpg-input" required>
             
-            <label for="employeeEmail">อีเมล:</label>
+            <label for="employeeEmail">ອີເມລ:</label>
             <input type="email" id="employeeEmail" name="employeeEmail" class="gpg-input" required>
 
-            <label for="employeePassword">รหัสผ่าน:</label>
+            <label for="employeePassword">ລະຫັດຜ່ານ:</label>
             <input type="password" id="employeePassword" name="employeePassword" class="gpg-input" placeholder="ใส่เมื่อต้องการเพิ่มหรือเปลี่ยนรหัสผ่านเท่านั้น">
             
-            <label for="employeeAddress">ที่อยู่:</label>
+            <label for="employeeAddress">ທີ່ຢູ່:</label>
             <textarea id="employeeAddress" name="employeeAddress" class="gpg-input" rows="3" required></textarea>
             
-            <label for="employeeRole">บทบาท:</label>
+            <label for="employeeRole">ບົດບາດ:</label>
             <select id="employeeRole" name="employeeRole" class="gpg-input" required>
                 <option value="admin">Admin</option>
                 <option value="employee">Employee</option>
             </select>
             
             <div style="text-align: center; margin-top: 20px;">
-                <button type="submit" class="dashboard-add-btn">บันทึก</button>
+                <button type="submit" class="dashboard-add-btn">ບັນທຶກ</button>
             </div>
         </form>
     </div>
